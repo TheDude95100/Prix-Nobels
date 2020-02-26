@@ -9,10 +9,9 @@
 		<nav>
 			<ul>
 				<li><a href="?controller=list&action=last"> Last Nobel Prizes</a></li>
+				<li><a href="?controller=list&action=pagination"> All the Nobel Prizes</a></li>
 				<li><a href="?controller=set&action=form_add"> Add a Nobel prize</a></li>
-				<!-- <li><a href="?controller=set&action=form_update"> Modify a Nobel prize</a></li> -->
-				<!-- <li><a href="?controller=list&action=pagination"> All the Nobel Prizes</a></li> -->
-				<!-- <li><a href="?controller=search"> Search among te Nobel prizes</a></li> -->
+				<li><a href="?controller=search"> Search among te Nobel prizes</a></li>
 			</ul>
 		</nav>
 

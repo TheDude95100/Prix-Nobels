@@ -10,5 +10,4 @@
 </p>
 
 
-
 <?php require "view_end.php"; ?>
