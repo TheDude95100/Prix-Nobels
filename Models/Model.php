@@ -2,7 +2,7 @@
 
 class Model
 {
-    
+
 
     /**
      * Attribut contenant l'instance PDO
@@ -15,7 +15,7 @@ class Model
      */
     private static $instance = null;
 
-    
+
     /**
      * Constructeur : effectue la connexion à la base de données.
      */
@@ -23,7 +23,7 @@ class Model
     {
 
         try {
-            include '/home/Web/Auth/credentials.php';
+            include 'credentials.php';
             $this->bd = new PDO($dsn, $login, $mdp);
             $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->bd->query("SET nameS 'utf8'");
@@ -164,13 +164,13 @@ class Model
         try {
             //Préparation de la requête
             $requete = $this->bd->prepare('INSERT INTO nobels (year, category, name, birthdate, birthplace, county, motivation) VALUES (:year, :category, :name, :birthdate, :birthplace, :county, :motivation)');
-            
+
             //Remplacement des marqueurs de place par les valeurs
             $marqueurs = ['year', 'category', 'name', 'birthdate','birthplace', 'county', 'motivation'];
             foreach ($marqueurs as $value) {
                 $requete->bindValue(':' . $value, $infos[$value]);
             }
-    
+
             //Exécution de la requête
             return $requete->execute();
         } catch (PDOException $e) {
@@ -190,13 +190,13 @@ class Model
         try {
             //Préparation de la requête
             $requete = $this->bd->prepare('UPDATE nobels SET year = :year, category = :category, name = :name, birthdate = :birthdate, birthplace = :birthplace, county = :county, motivation = :motivation WHERE id = :id');
-            
+
             //Remplacement des marqueurs de place par les valeurs
             $marqueurs = ['id','year', 'category', 'name', 'birthdate','birthplace', 'county', 'motivation'];
             foreach ($marqueurs as $value) {
                 $requete->bindValue(':' . $value, $infos[$value]);
             }
-    
+
             //Exécution de la requête
             return $requete->execute();
         } catch (PDOException $e) {
@@ -344,7 +344,7 @@ class Model
         }
     }
 
-    
+
     /**
      * Supprime le prix nobel dont l'identifiant est $id_np
      * @param  [int]  $id_np identifiant du prix nobel à supprimer
