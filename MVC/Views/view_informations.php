@@ -2,9 +2,9 @@
 
 <h1> <?= e($name) ?> </h1>
 
-
+<img src="Photo/<?= is_null($Photo) ? '???' : e($Photo)?>">
 <ul>
-    <li> Year and place of birth : <?= is_null($birthdate) ? '???' : e($birthdate) ?> 
+    <li> Year and place of birth : <?= is_null($birthdate) ? '???' : e($birthdate) ?>
             at <?= is_null($birthplace) ? '???' : e($birthplace) ?> </li>
     <li> County : <?= is_null($county) ? '???' : e($county) ?> </li>
 </ul>
@@ -14,7 +14,7 @@
 </h2>
 
 
-<p>     
+<p>
     <?= e($motivation) ?>
 </p>
 
